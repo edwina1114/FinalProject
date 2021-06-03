@@ -8,33 +8,14 @@ import kotlinx.coroutines.launch
 class WeatherViewModel : ViewModel() {
 
     val cities = listOf<City>(
-        City("Kaohsiung", "高雄市"),
-        City("Taichung", "臺中市"),
-        City("Tainan", "臺南市"),
-        City("Taipei", "臺北市"),
-        City("Taoyuan", "桃園市"),
-        City("Chiayi", "嘉義市"),
-        City("Hsinchu", "新竹市"),
-        City("Keelung", "基隆市"),
-        City("Changhua", "彰化市"),
-        City("Douliu", "斗六市"),
-        City("Hualien", "花蓮市"),
-        City("Magong", "馬公市"),
-        City("Miaoli", "苗栗市"),
-        City("Nantou", "南投市"),
-        City("Pingtung", "屏東市"),
-        City("Puzi", "朴子市"),
-        City("Taibao", "太保市"),
-        City("Taitung", "臺東市"),
-        City("Toufen", "頭份市"),
-        City("Yilan", "宜蘭市"),
-        City("Yuanlin", "員林市"),
-        City("Zhubei", "竹北市")
+        City("Hualien", "花蓮"),
+        City("Banqiao ", "板橋")
     )
 
     //extract city names into two seperated lists
-    val cities_ch = MutableList(cities.size, {cities[it].cName})
-    val cities_en = MutableList(cities.size, {cities[it].eName})
+    val cities_ch = MutableList(cities.size) { cities[it].cName }
+    val cities_en = MutableList(cities.size) { cities[it].eName }
+
     //add the selection hint text to be the first item
     init {
         cities_ch.add(0, "選擇一個城市")

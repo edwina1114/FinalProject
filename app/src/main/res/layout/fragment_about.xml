@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
@@ -9,6 +10,7 @@
         tools:context=".fragments.AboutFragment">
 
         <!-- TODO: Update blank fragment layout -->
+
         <TextView
             android:id="@+id/about_title"
             android:layout_width="match_parent"
@@ -43,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F9D6D6"
-            android:text="如何抵達花蓮"
+            android:text="交通方式"
             android:textColor="#070707"
             android:textSize="24sp" />
 
@@ -73,6 +75,12 @@
             android:gravity="center|start"
             android:text="花蓮機場"
             android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/background" />
 
     </LinearLayout>
 </layout>

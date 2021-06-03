@@ -47,10 +47,25 @@
         android:id="@+id/aboutFragment"
         android:name="com.example.test.fragments.AboutFragment"
         android:label="關於"
-        tools:layout="@layout/fragment_about"/>
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_aboutFragment_to_webFragment"
+            app:destination="@id/webFragment"
+            app:popUpTo="@id/aboutFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
     <fragment
         android:id="@+id/weatherFragment"
         android:name="com.example.test.fragments.WeatherFragment"
-        android:label="WeatherFragment"
+        android:label="天氣"
         tools:layout="@layout/fragment_weather"/>
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.example.test.fragments.WebFragment"
+        android:label="關於"
+        tools:layout="@layout/fragment_web" >
+        <argument
+            android:name="link"
+            app:argType="string" />
+    </fragment>
 </navigation>
