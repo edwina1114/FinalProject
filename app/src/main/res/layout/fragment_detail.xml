@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="scene"
+            type="com.example.test.database.Scene" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{scene.name}"
+                android:textAlignment="center"
+                android:textColor="#DA4112"
+                android:textSize="30sp"
+                tools:text="店名" />
+
+            <ImageView
+                android:id="@+id/image_pic"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                app:setImage="@{scene}"
+                tools:src="@drawable/b5" />
+
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@{scene.description}"
+                android:textColor="#223277"
+                android:textSize="18sp"
+                tools:text="簡介" />
+
+            <Button
+                android:id="@+id/map_button"
+                android:layout_width="177dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_style"
+                android:gravity="center"
+                android:text="將位置顯示於地圖"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/weatherButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

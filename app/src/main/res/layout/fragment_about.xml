@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.AboutFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/about_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="美食日誌"
+            android:textColor="#E35959"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/about_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F9D6D6"
+            android:text="Give a FeedBack"
+            android:textColor="#070707"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn_googleplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center|start"
+            android:text="google play評分"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F9D6D6"
+            android:text="如何抵達花蓮"
+            android:textColor="#070707"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/btn_train"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center|start"
+            android:text="台鐵訂票網"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_bus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center|start"
+            android:text="首都客運網"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_plain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:gravity="center|start"
+            android:text="花蓮機場"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</layout>
