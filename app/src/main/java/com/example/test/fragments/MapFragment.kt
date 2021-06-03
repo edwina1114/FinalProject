@@ -44,7 +44,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        val addressList :List<Address>
+        var addressList: List<Address>
 
         //get the Google map object
         mMap = googleMap
@@ -54,9 +54,12 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         // Add a marker and move the camera
         if (!addressList.isNullOrEmpty()) {
             val location = LatLng(addressList[0].latitude, addressList[0].longitude)
-            mMap.addMarker(MarkerOptions().position(location).title(args.name))
+            mMap.addMarker(
+                MarkerOptions().position(location).snippet(args.address).title(args.name)
+            )
             //zoom = 15f
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
+            //mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
         }
         enableMyLocation()
 
@@ -90,10 +93,11 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         else -> super.onOptionsItemSelected(item)
     }
 
-    private fun isPermissionGranted() : Boolean {
+    private fun isPermissionGranted(): Boolean {
         return ContextCompat.checkSelfPermission(
             requireContext(),
-            Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+            Manifest.permission.ACCESS_FINE_LOCATION
+        ) == PackageManager.PERMISSION_GRANTED
     }
 
     private fun enableMyLocation() {
@@ -116,8 +120,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 return
             }
             mMap.isMyLocationEnabled = true
-        }
-        else {
+        } else {
             ActivityCompat.requestPermissions(
                 requireContext() as Activity,
                 arrayOf<String>(Manifest.permission.ACCESS_FINE_LOCATION),
@@ -129,7 +132,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
-        grantResults: IntArray) {
+        grantResults: IntArray
+    ) {
         if (requestCode == REQUEST_LOCATION_PERMISSION) {
             if (grantResults.contains(PackageManager.PERMISSION_GRANTED)) {
                 enableMyLocation()
